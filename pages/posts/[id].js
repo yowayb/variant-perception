@@ -1,3 +1,4 @@
+import Chart from '../../components/chart';
 import Date from '../../components/date';
 import Head from 'next/head';
 import Layout from '../../components/layout';
@@ -33,6 +34,7 @@ export default function Post({ postData }) {
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <Chart />
       </article>
     </Layout>
   );
