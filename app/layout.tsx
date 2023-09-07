@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="dark:bg-slate-800 dark:text-slate-50">{children}</body>
     </html>
   )
 }

@@ -15,9 +15,9 @@ export default async function Post({ params }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article class="prose">
-        <h1 className="text-3xl font-bold">{postData.title}</h1>
-        <div className="text-slate-500">
+      <article className="prose dark:text-slate-300">
+        <h1 className="text-3xl font-bold dark:text-slate-300">{postData.title}</h1>
+        <div className="text-slate-500 dark:text-slate-400">
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
