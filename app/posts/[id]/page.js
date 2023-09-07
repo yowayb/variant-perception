@@ -3,7 +3,6 @@ import Date from '../../date';
 import Head from 'next/head';
 import Container from '../../container';
 import { getAllPostIds, getPostData } from '../../../lib/posts';
-import utilStyles from '../../../styles/utils.module.css';
 
 export async function generateStaticParams() {
   return getAllPostIds();
@@ -16,9 +15,9 @@ export default async function Post({ params }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article>
+      <article class="prose">
         <h1 className="text-3xl font-bold">{postData.title}</h1>
-        <div className={utilStyles.lightText}>
+        <div className="text-slate-500">
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />

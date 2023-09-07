@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './container.module.css';
-import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
 const name = 'Yoway Buorn';
@@ -31,12 +30,12 @@ export default function Layout({ children, home }) {
             <Image
               priority
               src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
+              className="rounded-full"
               height={144}
               width={144}
               alt=""
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className="text-3xl">{name}</h1>
           </>
         ) : (
           <>
@@ -44,14 +43,14 @@ export default function Layout({ children, home }) {
               <Image
                 priority
                 src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
+                className="rounded-full"
                 height={108}
                 width={108}
                 alt=""
               />
             </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
+            <h2 className="text-2xl">
+              <Link href="/">
                 {name}
               </Link>
             </h2>
