@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import Nav from './nav'
+import Sidebar from './sidebar'
 import '../styles/global.css';
 
 export const metadata: Metadata = {
@@ -7,15 +9,19 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body className="dark:bg-slate-800 dark:text-slate-50">{children}</body>
+      <body className="dark:bg-slate-800 dark:text-slate-50">
+        <div className="antialiased bg-slate-50 dark:bg-slate-900">
+          <Nav />
+          <Sidebar />
+          {children}
+        </div>
+      </body>
     </html>
   )
 }

@@ -1,8 +1,9 @@
-import Chart from '../../chart';
+import Line from '../../line';
 import Date from '../../date';
 import Head from 'next/head';
 import Container from '../../container';
 import { getAllPostIds, getPostData } from '../../../lib/posts';
+import { getData } from '../../../lib/get-data';
 
 export async function generateStaticParams() {
   return getAllPostIds();
@@ -21,7 +22,9 @@ export default async function Post({ params }) {
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        <Chart />
+        <div className="h-72">
+          <Line data={await getData('cli-g20-monthly')} />
+        </div>
       </article>
     </Container>
   );
